@@ -96,8 +96,7 @@ app.get('/body-builder', (req, res) => {
 app.post('/gym', (req, res) => {
   const data = req.body
   let gym = new Gym()
-  let gymId = 1
-  gym.id = gymId++
+  gym.id = academias.lenght + 1
   gym.nome = data.nome
   gym.telefone = data.telefone
   academias.push(gym)
