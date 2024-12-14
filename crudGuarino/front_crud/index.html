@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Body Builders</title>
+    <script src="js/script.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body onload="carregarClientes(); carregarAcademias(); carregarEstilos();">
+    <h1>Body Builders</h1>
+    <form name="form-busca" id="form-busca" onsubmit="return false">
+        <input type="search" name="busca" id="busca" onkeyup="carregarClientes()" />
+    </form>
+    <div id="cadastros">
+        <button onclick="adicionar()" class="adicionar">Cadastrar Body Builder</button>
+        <button onclick="adicionarEstilo()" class="adicionar">Adicionar estilo</button>
+        <button onclick="adicionarAcademia()" class="adicionar">Adicionar academia</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Academia</th>
+                <th>CPF</th>
+                <th>Nome</th>
+                <th>Peso</th>
+                <th>Altura</th>
+                <th>Data de Nascimento</th>
+                <th>Estilo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <div id="modal">
+        <button onclick="ocultarModal()" class="fechar">X</button>
+        <form onsubmit="return salvar()">
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" id="cpf" />
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" />
+            </div>
+            <div class="form-group">
+                <label for="peso">Peso</label>
+                <input type="number" name="peso" id="peso" />
+            </div>
+            <div class="form-group">
+                <label for="altura">Altura</label>
+                <input type="text" name="altura" id="altura" />
+            </div>
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" name="dataNascimento" id="dataNascimento" />
+            </div>
+            <div class="form-group">
+                <label for="estilo">Estilo do BodyBuilder</label>
+                <select id="estilo">
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="academia">Academias</label>
+                <select id="academia">
+
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="enviar" value="Salvar" />
+            </div>
+        </form>
+    </div>
+
+    <div id="modalEstilo">
+        <button onclick="ocultarModalEstilo()" class="fechar">X</button>
+        <form onsubmit="return salvarEstilo()">
+            <div class="form-group">
+                <label for="nomeEstilo">Estilo</label>
+                <input type="text" id="nomeEstilo"/>
+            </div>            
+            <div class="form-group">
+                <input type="submit" name="enviar" value="Salvar"/>
+            </div>
+        </form>
+    </div>
+
+    <div id="modalAcademia">
+        <button onclick="ocultarModalAcademia()" class="fechar">X</button>
+        <form onsubmit="return salvarAcademia()">
+            <div class="form-group">
+                <label for="nomeAcademia">Academia</label>
+                <input type="text" id="nomeAcademia"/>
+            </div>  
+            <div class="form-group">
+                <label for="telefoneAcademia">Telefone</label>
+                <input type="tel" id="telefoneAcademia"/>
+            </div>          
+            <div class="form-group">
+                <input type="submit" name="enviar" value="Salvar"/>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
