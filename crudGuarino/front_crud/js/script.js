@@ -316,6 +316,7 @@ function salvarAcademia() {
 
 function limparFormularioAcademia(){
     document.getElementById("nomeAcademia").value = ""
+    document.getElementById('telefoneAcademia').value = ""
 }
 
 function ocultarModalAcademia(){
